@@ -35,10 +35,10 @@ Tabular DP acts as the ground-truth baseline. It solves the Bellman equation via
 
 - **Mechanics**: Discretizes the continuous state and action spaces into a finite grid. For each state-action pair, the expected future value is computed exactly.
 - **Expectation calculation**: Because it has full access to the transition dynamics (a "white-box" model), it calculates the exact mathematical expectation of the Gaussian returns using Gauss-Hermite quadrature, entirely avoiding sampling noise.
-$$
-- **Limitations**: Suffers from the **curse of dimensionality**. As $n$ increases, the grid size explodes ($\text{wealth points} \times \text{prop\_grid}^n \times \text{actions}^n \times \text{quad}^n$), making it computationally intractable for $n > 3$.
+Limitations: Suffers from the curse of dimensionality. As $n$ increases, the grid size explodes
+($\text{wealth points} \times \text{prop\_grid}^n \times \text{actions}^n \times \text{quad}^n$),
+making it computationally intractable for $n > 3$.
 
-$$
 ### Approximate Dynamic Programming (ADP)
 
 ADP replaces the discrete state grid with continuous function approximators.
